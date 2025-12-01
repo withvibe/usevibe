@@ -1,0 +1,309 @@
+{
+  "name": "useVibe-vscode",
+  "displayName": "useVibe",
+  "description": "Organize project knowledge and integrate with AI assistants. Perfect for GitHub Copilot, Cursor AI, and other LLM-powered tools.",
+  "version": "1.0.0",
+  "publisher": "useVibe",
+  "license": "MIT",
+  "author": {
+    "name": "ctxhub",
+    "url": "https://github.com/useVibe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/useVibe/useVibe-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/useVibe/useVibe-vscode/issues"
+  },
+  "homepage": "https://github.com/useVibe/useVibe-vscode#readme",
+  "keywords": [
+    "context",
+    "copilot",
+    "cursor",
+    "ai-assistant",
+    "github",
+    "project-management",
+    "documentation",
+    "vscode",
+    "ai",
+    "chat"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Machine Learning",
+    "Programming Languages",
+    "Snippets",
+    "Other"
+  ],
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "icon": "resources/icon.png",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Cursor Contexts",
+      "properties": {
+        "cursorContexts.contextsFolderName": {
+          "type": "string",
+          "default": ".contexts",
+          "description": "Name of the folder where contexts are stored"
+        },
+        "cursorContexts.showWelcomeMessage": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show welcome message when no contexts exist"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "cursorContexts.createProject",
+        "title": "Create Project",
+        "icon": "$(add)"
+      },
+      {
+        "command": "cursorContexts.deleteProject",
+        "title": "Delete Project",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "cursorContexts.toggleProject",
+        "title": "Toggle Enable/Disable",
+        "icon": "$(check)"
+      },
+      {
+        "command": "cursorContexts.addCurrentFile",
+        "title": "Add Current File to Context",
+        "icon": "$(file-add)"
+      },
+      {
+        "command": "cursorContexts.importFiles",
+        "title": "Import Files",
+        "icon": "$(files)"
+      },
+      {
+        "command": "cursorContexts.openFolder",
+        "title": "Open Project Folder",
+        "icon": "$(folder-opened)"
+      },
+      {
+        "command": "cursorContexts.renameProject",
+        "title": "Rename Project",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "cursorContexts.createNote",
+        "title": "Create Note",
+        "icon": "$(note)"
+      },
+      {
+        "command": "cursorContexts.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "cursorContexts.insertProject",
+        "title": "Insert Project Reference"
+      },
+      {
+        "command": "cursorContexts.copyProjectPath",
+        "title": "Copy Project Path",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "cursorContexts.cloneFromGitHub",
+        "title": "Clone from GitHub",
+        "icon": "$(github)"
+      },
+      {
+        "command": "cursorContexts.updateProject",
+        "title": "Update Project (Git Pull)",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "cursorContexts.showGitChanges",
+        "title": "Show Git Changes",
+        "icon": "$(git-branch)"
+      },
+      {
+        "command": "cursorContexts.showProjectStatus",
+        "title": "Context Manager: Show Project Status Dashboard",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "cursorContexts.showAllTasks",
+        "title": "Context Manager: Show All TODO Tasks",
+        "icon": "$(checklist)"
+      },
+      {
+        "command": "cursorContexts.showRecentNews",
+        "title": "Context Manager: Show Recent Changes & News",
+        "icon": "$(rss)"
+      },
+      {
+        "command": "cursorContexts.createWorkPlan",
+        "title": "Context Manager: Create Work Plan for Today",
+        "icon": "$(calendar)"
+      },
+      {
+        "command": "cursorContexts.syncAllProjects",
+        "title": "Context Manager: Sync All Git Projects",
+        "icon": "$(sync)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "cursor-contexts",
+          "title": "Contexts",
+          "icon": "resources/contexts-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "cursor-contexts": [
+        {
+          "id": "contextsView",
+          "name": "Projects",
+          "contextualTitle": "Context Projects",
+          "icon": "resources/contexts-icon.svg"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "contextsView",
+        "contents": "Welcome to Cursor Contexts! 🎯\n\nOrganize your project knowledge and control what your AI sees.\n\n[Create Your First Project](command:cursorContexts.createProject)\n\nEach project is a dedicated space for:\n• 📝 Notes and documentation\n• 🏗️ Architecture descriptions\n• 📚 Reference materials\n• 💡 Examples and templates"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "cursorContexts.createProject",
+          "when": "view == contextsView",
+          "group": "navigation@1"
+        },
+        {
+          "command": "cursorContexts.refresh",
+          "when": "view == contextsView",
+          "group": "navigation@2"
+        },
+        {
+          "command": "cursorContexts.cloneFromGitHub",
+          "when": "view == contextsView",
+          "group": "navigation@3"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "cursorContexts.toggleProject",
+          "when": "view == contextsView && viewItem == project",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "cursorContexts.addCurrentFile",
+          "when": "view == contextsView && viewItem == project",
+          "group": "1_actions@2"
+        },
+        {
+          "command": "cursorContexts.importFiles",
+          "when": "view == contextsView && viewItem == project",
+          "group": "1_actions@3"
+        },
+        {
+          "command": "cursorContexts.createNote",
+          "when": "view == contextsView && viewItem == project",
+          "group": "1_actions@4"
+        },
+        {
+          "command": "cursorContexts.openFolder",
+          "when": "view == contextsView && viewItem == project",
+          "group": "2_navigation@1"
+        },
+        {
+          "command": "cursorContexts.copyProjectPath",
+          "when": "view == contextsView && viewItem == project",
+          "group": "2_navigation@2"
+        },
+        {
+          "command": "cursorContexts.renameProject",
+          "when": "view == contextsView && viewItem == project",
+          "group": "3_edit@1"
+        },
+        {
+          "command": "cursorContexts.updateProject",
+          "when": "view == contextsView && viewItem == project && resourceExtname == .git",
+          "group": "2_navigation@3"
+        },
+        {
+          "command": "cursorContexts.showGitChanges",
+          "when": "view == contextsView && viewItem == project && resourceExtname == .git",
+          "group": "2_navigation@4"
+        },
+        {
+          "command": "cursorContexts.deleteProject",
+          "when": "view == contextsView && viewItem == project",
+          "group": "4_delete@1"
+        }
+      ]
+    },
+    "chatParticipants": [
+      {
+        "id": "cursor-contexts.projects",
+        "name": "projects",
+        "description": "Your AI project assistant - manages tasks, tracks changes, and helps organize your work",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "list",
+            "description": "List all available projects"
+          },
+          {
+            "name": "status",
+            "description": "Show comprehensive project status dashboard"
+          },
+          {
+            "name": "tasks",
+            "description": "Show all TODO items and pending tasks"
+          },
+          {
+            "name": "news",
+            "description": "Show recent changes and updates across projects"
+          },
+          {
+            "name": "plan",
+            "description": "Get AI-suggested work plan for today"
+          },
+          {
+            "name": "sync all",
+            "description": "Update all Git projects and analyze changes"
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "mammoth": "^1.6.0",
+    "pdf-parse": "^1.1.1",
+    "simple-git": "^3.30.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/pdf-parse": "^1.1.1",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}

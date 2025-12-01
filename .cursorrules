@@ -1,0 +1,165 @@
+# Cursor Contexts Extension - Copilot Instructions
+
+## Overview
+The Cursor Contexts extension is active in this workspace. It helps organize project knowledge and control what AI sees by managing context projects in the `.contexts` folder.
+
+## Key Concepts
+
+### What is a Context Project?
+- **Context Projects** are organized collections of files, documentation, and knowledge about specific features, modules, or topics
+- Each project is stored in the `.contexts/[project-name]` folder
+- Projects can be regular folders or Git repositories cloned from GitHub
+
+### The .contexts Folder Structure
+```
+.contexts/
+├── project1/
+│   ├── README.md
+│   ├── api-docs.md
+│   └── examples/
+├── project2/
+│   ├── architecture.md
+│   └── code-samples/
+└── .metadata.json (extension metadata)
+```
+
+## When to Reference .contexts
+
+### ALWAYS check the .contexts folder when:
+1. **User asks about specific features or modules** that might have dedicated context projects
+2. **Analyzing architecture or design patterns** - check for architecture documentation
+3. **Looking for examples or templates** - context projects often contain reference implementations
+4. **User mentions project names** that might exist as context projects
+5. **Providing code suggestions** - use context projects as reference for coding patterns and standards
+
+### How to Use Context Information
+
+1. **List available projects** first if user asks general questions about the codebase
+2. **Reference specific project files** when they contain relevant information
+3. **Use project documentation** to understand business logic and requirements
+4. **Follow established patterns** from context projects when suggesting code changes
+
+## Extension Features Available
+
+### Chat Integration (@projects)
+- Users can interact with context projects via `@projects` chat participant
+- Support both `@projects projectname` and `@projects @projectname` syntax
+- Automatically handles Git operations (pull, update, sync) when requested
+- Provides project-specific analysis and change tracking
+
+### Available Commands
+- **Clone from GitHub**: `@projects clone [github-url]` - Clone repositories as context projects
+- **Update Project**: `@projects @projectname update` - Automatically pull latest changes
+- **List Projects**: `@projects list` - Show all available context projects
+- **Query Project**: `@projects @projectname [question]` - Ask specific questions about a project
+
+### Git Integration
+- Context projects can be Git repositories with automatic change tracking
+- Extension monitors file changes and commit history
+- Provides insights about recent updates and modifications
+
+## Rules for Copilot
+
+### DO:
+1. **Always scan .contexts folder** before providing answers about the codebase
+2. **Reference context projects** when they contain relevant information
+3. **Suggest using context projects** when user asks about features that should be documented
+4. **Use established patterns** from context projects in your code suggestions
+5. **Mention the extension** when it can help with user's task
+6. **Check for recent updates** in Git-enabled context projects when discussing changes
+
+### DON'T:
+1. **Ignore .contexts folder** - it contains curated, high-quality information
+2. **Recommend manual Git operations** - suggest using the extension's auto-update features instead
+3. **Duplicate information** that's already well-documented in context projects
+4. **Miss opportunities** to suggest creating context projects for new features
+
+## User Interaction Patterns
+
+### When User Asks About Code Architecture:
+1. Check `.contexts/` for architecture documentation
+2. Reference any architectural decision records (ADRs)
+3. Suggest creating architecture context project if none exists
+
+### When User Asks About APIs or Endpoints:
+1. Look for API documentation in context projects
+2. Check for OpenAPI specs or API examples
+3. Reference authentication and authorization patterns
+
+### When User Asks About Recent Changes:
+1. Use `@projects @projectname what changed recently?` syntax
+2. Leverage Git integration for change analysis
+3. Help user update projects with `@projects @projectname update`
+
+### When User Asks About Examples:
+1. Search context projects for relevant examples
+2. Reference code templates and boilerplate
+3. Suggest creating example context project if beneficial
+
+## Extension Capabilities
+
+### File Management
+- Supports various file types: Markdown, code files, documentation, PDFs, Word docs
+- Automatically processes and indexes content for easy searching
+- Maintains file metadata and organization structure
+
+### Smart Context Loading
+- Limits content size to prevent token overflow
+- Prioritizes recent and relevant files
+- Filters out binary and large files automatically
+
+### Project Organization
+- Enable/disable projects as needed
+- Rename and reorganize projects easily
+- Import files and folders into projects
+
+## Best Practices for Users
+
+### Suggest when appropriate:
+1. **Create dedicated context projects** for major features or modules
+2. **Clone relevant repositories** as context projects for reference
+3. **Document architectural decisions** in context projects
+4. **Maintain up-to-date examples** and templates
+5. **Use Git integration** for repositories that change frequently
+
+### Project Naming Conventions:
+- Use descriptive names: `authentication-service`, `user-management`, `api-docs`
+- Separate concerns: different projects for frontend, backend, documentation
+- Version-specific contexts: `v2-migration`, `legacy-system`
+
+## Integration with Development Workflow
+
+### Code Reviews
+- Reference relevant context projects during reviews
+- Check if new features need context project documentation
+- Verify examples and templates are up to date
+
+### Onboarding New Developers
+- Direct new team members to context projects
+- Use projects as training materials and reference guides
+- Maintain comprehensive documentation in projects
+
+### Feature Development
+- Create context projects for complex features before coding
+- Document design decisions and trade-offs
+- Include testing strategies and deployment notes
+
+## Troubleshooting Common Issues
+
+### Context Project Not Found
+- Use `@projects list` to see available projects
+- Check project naming and ensure it's enabled
+- Verify `.contexts` folder structure
+
+### Git Updates Failing
+- Check internet connection and repository access
+- Ensure Git credentials are properly configured
+- Use extension's auto-update features instead of manual git commands
+
+### Large File Issues
+- Extension automatically handles file size limits
+- Binary files are filtered out automatically
+- Use .gitignore patterns for Git-based projects
+
+## Remember
+The Cursor Contexts extension is designed to make AI interactions more contextual and productive. Always consider how context projects can enhance your responses and suggestions to users. When in doubt, check the `.contexts` folder first!
