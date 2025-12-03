@@ -127,7 +127,7 @@ useVibe-vscode/
 │   ├── extension.ts             # Extension entry point
 │   ├── contextManager.ts        # Core context management logic
 │   ├── contextsProvider.ts      # Tree view provider
-│   ├── chatParticipant.ts       # @projects chat participant
+│   ├── chatParticipant.ts       # @usevibe chat participant
 │   ├── githubIntegration.ts     # Git operations
 │   ├── autoSyncService.ts       # Auto-sync functionality
 │   ├── documentConverter.ts     # PDF/DOCX converters
@@ -237,7 +237,7 @@ Follow the [Conventional Commits](https://www.conventionalcommits.org/) specific
 ### Examples
 
 ```bash
-feat(chat): add @projects plan command
+feat(chat): add @usevibe plan command
 
 Implements AI-suggested work plan based on TODO items
 and recent changes across all context projects.

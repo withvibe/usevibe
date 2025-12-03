@@ -1,6 +1,6 @@
 # 🤖 Project Assistant Guide
 
-The `@projects` chat participant is now your comprehensive project management assistant!
+The `@usevibe` chat participant is now your comprehensive project management assistant!
 
 ## 🎯 What It Does
 
@@ -14,7 +14,7 @@ The project assistant helps you:
 
 ## 📋 Commands
 
-### `@projects status` or `@projects dashboard`
+### `@usevibe status` or `@usevibe dashboard`
 Shows comprehensive overview of all your projects:
 - Total project count
 - Recent Git activity
@@ -23,10 +23,10 @@ Shows comprehensive overview of all your projects:
 
 **Example:**
 ```
-@projects status
+@usevibe status
 ```
 
-### `@projects tasks` or `@projects todo`
+### `@usevibe tasks` or `@usevibe todo`
 Scans all your projects for TODO, FIXME, HACK, BUG comments:
 - Lists all pending tasks
 - Groups by project
@@ -35,10 +35,10 @@ Scans all your projects for TODO, FIXME, HACK, BUG comments:
 
 **Example:**
 ```
-@projects tasks
+@usevibe tasks
 ```
 
-### `@projects news` or `@projects what's new`
+### `@usevibe news` or `@usevibe what's new`
 Shows recent changes across all Git projects:
 - Recent commits from all projects
 - Extracts potential tasks from commit messages
@@ -47,11 +47,11 @@ Shows recent changes across all Git projects:
 
 **Example:**
 ```
-@projects news
-@projects what's new in the last week?
+@usevibe news
+@usevibe what's new in the last week?
 ```
 
-### `@projects plan` or `@projects what should i work on`
+### `@usevibe plan` or `@usevibe what should i work on`
 Creates an AI-suggested work plan for today:
 - Analyzes all projects, tasks, and recent activity
 - Prioritizes based on importance and dependencies
@@ -60,12 +60,12 @@ Creates an AI-suggested work plan for today:
 
 **Example:**
 ```
-@projects plan
-@projects what should i work on today?
-@projects suggest a plan for this afternoon
+@usevibe plan
+@usevibe what should i work on today?
+@usevibe suggest a plan for this afternoon
 ```
 
-### `@projects sync all` or `@projects update all`
+### `@usevibe sync all` or `@usevibe update all`
 Updates all Git repositories and analyzes changes:
 - Runs `git pull` on all Git projects
 - Shows what changed in each
@@ -74,50 +74,50 @@ Updates all Git repositories and analyzes changes:
 
 **Example:**
 ```
-@projects sync all
-@projects refresh all projects
+@usevibe sync all
+@usevibe refresh all projects
 ```
 
-### `@projects list`
+### `@usevibe list`
 Simple list of all available projects (unchanged)
 
 **Example:**
 ```
-@projects list
+@usevibe list
 ```
 
-### `@projects @projectname [query]`
+### `@usevibe @projectname [query]`
 Query a specific project (unchanged):
 
 **Example:**
 ```
-@projects @myapi what endpoints are available?
-@projects @frontend update
+@usevibe @myapi what endpoints are available?
+@usevibe @frontend update
 ```
 
 ## 🎬 Typical Workflows
 
 ### Morning Start
 ```
-Developer: @projects sync all
+Developer: @usevibe sync all
 Assistant: *Syncs all Git repos, shows what's new*
 
-Developer: @projects plan
+Developer: @usevibe plan
 Assistant: *Creates work plan based on updates and tasks*
 ```
 
 ### Mid-Day Check
 ```
-Developer: @projects status
+Developer: @usevibe status
 Assistant: *Shows project overview and priorities*
 
-Developer: @projects tasks
+Developer: @usevibe tasks
 Assistant: *Lists all TODO items with priorities*
 ```
 
 ### End of Day
 ```
-Developer: @projects news
+Developer: @usevibe news
 Assistant: *Shows what changed today across projects*
 ```
 
@@ -125,7 +125,7 @@ Assistant: *Shows what changed today across projects*
 
 1. **Task Tracking**: Add `// TODO:`, `// FIXME:`, or `// BUG:` comments in your code - the assistant will find and organize them!
 
-2. **Daily Routine**: Start each day with `@projects sync all` followed by `@projects plan` for a productivity boost
+2. **Daily Routine**: Start each day with `@usevibe sync all` followed by `@usevibe plan` for a productivity boost
 
 3. **Context Aware**: The assistant reads your project descriptions and Git history to give relevant suggestions
 
@@ -135,8 +135,8 @@ Assistant: *Shows what changed today across projects*
    - "What are my pending tasks?"
 
 5. **Project-Specific**: Combine with project names for targeted help:
-   - `@projects @backend what needs testing?`
-   - `@projects @frontend update and tell me what changed`
+   - `@usevibe @backend what needs testing?`
+   - `@usevibe @frontend update and tell me what changed`
 
 ## 🔧 Behind the Scenes
 
@@ -151,21 +151,21 @@ The assistant:
 
 ### Combine Commands
 ```
-Developer: @projects sync all, then show me tasks, and create a plan
+Developer: @usevibe sync all, then show me tasks, and create a plan
 Assistant: *Performs all three operations in sequence*
 ```
 
 ### Specific Timeframes
 ```
-Developer: @projects what changed this week?
-Developer: @projects show recent updates
+Developer: @usevibe what changed this week?
+Developer: @usevibe show recent updates
 ```
 
 ### Focus Areas
 ```
-Developer: @projects what bugs need fixing?
-Developer: @projects any urgent tasks?
-Developer: @projects what features are in progress?
+Developer: @usevibe what bugs need fixing?
+Developer: @usevibe any urgent tasks?
+Developer: @usevibe what features are in progress?
 ```
 
 ## 📝 Task Format Examples

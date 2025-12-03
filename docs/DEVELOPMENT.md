@@ -126,7 +126,7 @@ useVibe-vscode/
 │   ├── extension.ts             # Entry point & command registration
 │   ├── contextManager.ts        # Core project management
 │   ├── contextsProvider.ts      # Tree view UI
-│   ├── chatParticipant.ts       # @projects chat integration
+│   ├── chatParticipant.ts       # @usevibe chat integration
 │   ├── githubIntegration.ts     # Git operations
 │   ├── autoSyncService.ts       # Auto-sync functionality
 │   ├── documentConverter.ts     # PDF/DOCX conversion
@@ -364,7 +364,7 @@ const commands = {
 };
 ```
 
-Usage: `@projects mycommand`
+Usage: `@usevibe mycommand`
 
 ---
 
@@ -410,7 +410,7 @@ Usage: `@projects mycommand`
 
 ### Chat Participant Not Showing
 
-**Symptom**: `@projects` doesn't appear in Copilot Chat
+**Symptom**: `@usevibe` doesn't appear in Copilot Chat
 
 **Solutions**:
 1. Verify GitHub Copilot extension installed

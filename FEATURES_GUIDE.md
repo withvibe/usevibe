@@ -68,7 +68,7 @@ contexts/
 
 ---
 
-## 💬 @projects Chat Integration
+## 💬 @usevibe Chat Integration
 
 ### Overview
 Type `@` in any editor or Cursor's chat to quickly reference and insert context projects. This feature provides intelligent autocomplete, hover information, and navigation.
@@ -85,7 +85,7 @@ Type `@` in any editor or Cursor's chat to quickly reference and insert context 
   - Cursor chat interface
 
 #### 2. **Project Quick Picker**
-- Type `@projects` and press Enter
+- Type `@usevibe` and press Enter
 - Opens a searchable list of all enabled projects
 - Select to insert reference
 
@@ -139,7 +139,7 @@ For API details, see @backend-api-specs.
 |--------|----------|
 | Trigger suggestions | `@` |
 | Accept suggestion | `Tab` or `Enter` |
-| Show all projects | Type `@projects` |
+| Show all projects | Type `@usevibe` |
 | Navigate to project | `Ctrl+Click` on reference |
 | Show hover info | Hover over reference |
 
@@ -194,7 +194,7 @@ No additional configuration needed! The features work automatically.
 - **Solution:** Some PDFs with complex layouts may not convert perfectly
 - **Tip:** Consider copying important sections manually
 
-#### @projects Not Working
+#### @usevibe Not Working
 
 **Problem:** "@" doesn't show suggestions
 - **Solution:** Ensure you have at least one enabled project

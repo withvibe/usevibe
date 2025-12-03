@@ -258,7 +258,7 @@
     "chatParticipants": [
       {
         "id": "cursor-contexts.projects",
-        "name": "projects",
+        "name": "usevibe",
         "description": "Your AI project assistant - manages tasks, tracks changes, and helps organize your work",
         "isSticky": true,
         "commands": [

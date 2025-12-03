@@ -121,19 +121,19 @@ interface ContextProject {
 **Purpose**: GitHub Copilot Chat integration
 
 **Responsibilities**:
-- Register `@projects` participant
+- Register `@usevibe` participant
 - Handle chat requests
 - Provide project context
 - Execute commands (status, tasks, plan, etc.)
 - Format responses for chat UI
 
 **Commands**:
-- `@projects status` - Project overview
-- `@projects tasks` - TODO scanning
-- `@projects plan` - Work planning
-- `@projects news` - Recent changes
-- `@projects sync all` - Update repos
-- `@projects @name [query]` - Project-specific queries
+- `@usevibe status` - Project overview
+- `@usevibe tasks` - TODO scanning
+- `@usevibe plan` - Work planning
+- `@usevibe news` - Recent changes
+- `@usevibe sync all` - Update repos
+- `@usevibe @name [query]` - Project-specific queries
 
 **Note**: Only works in VS Code with GitHub Copilot. Command Palette alternatives provided for Cursor.
 
@@ -239,7 +239,7 @@ GitHub Integration
 ### Chat Participant Query
 
 ```
-User: "@projects @api-docs how do I auth?"
+User: "@usevibe @api-docs how do I auth?"
     │
     v
 Chat Participant
@@ -278,7 +278,7 @@ Chat Participant
 
 ### 2. Chat Participant vs Commands
 
-**Decision**: Provide both `@projects` chat participant AND Command Palette commands
+**Decision**: Provide both `@usevibe` chat participant AND Command Palette commands
 
 **Rationale**:
 - VS Code + Copilot → Use chat participant (conversational)

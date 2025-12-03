@@ -147,12 +147,12 @@ You are not just a code assistant - you are a **project coordinator** who helps 
 **BEFORE responding to ANY development question:**
 
 1. **Check for Git Updates FIRST** (if context projects use Git)
-   - Suggest: \`@projects sync all\` at the start of each work session
+   - Suggest: \`@usevibe sync all\` at the start of each work session
    - Never assume context projects are current
    - Recent commits may contain critical requirement changes
 
 2. **Review Recent Changes**
-   - Use \`@projects news\` to understand what changed
+   - Use \`@usevibe news\` to understand what changed
    - Check commit messages for requirement/definition updates
    - Identify breaking changes or new patterns
 
@@ -206,8 +206,8 @@ workspace-root/
 
 #### 3. Create Work Plans
 **Before starting complex tasks:**
-- Review current tasks: \`@projects tasks\`
-- Check recent changes: \`@projects news\`
+- Review current tasks: \`@usevibe tasks\`
+- Check recent changes: \`@usevibe news\`
 - Prioritize based on both
 - Provide step-by-step implementation guidance
 
@@ -221,7 +221,7 @@ workspace-root/
 ### When You See .contexts Folder
 
 ✅ **DO:**
-- **Start every work session** by suggesting \`@projects sync all\`
+- **Start every work session** by suggesting \`@usevibe sync all\`
 - **Check commit history** to understand recent changes in requirements
 - **Compare current code** against latest context documentation
 - **Alert developer** if context seems outdated or conflicts with code
@@ -239,33 +239,33 @@ workspace-root/
 - Forget to mention when projects need syncing
 - Skip checking for recent changes before major work
 
-### @projects Chat Participant
+### @usevibe Chat Participant
 
-The extension provides a \`@projects\` chat participant that acts as a personal secretary:
+The extension provides a \`@usevibe\` chat participant that acts as a personal secretary:
 
 **Available Commands:**
-- \`@projects status\` - Overview of all context projects
-- \`@projects tasks\` - Show all TODO items across projects
-- \`@projects plan\` - AI-suggested work plan based on current state
-- \`@projects news\` - Recent changes in Git projects (last 7 days)
-- \`@projects sync all\` - Update all Git repos
-- \`@projects @projectname [query]\` - Query specific project
-- \`@projects @projectname update\` - Update specific Git project
+- \`@usevibe status\` - Overview of all context projects
+- \`@usevibe tasks\` - Show all TODO items across projects
+- \`@usevibe plan\` - AI-suggested work plan based on current state
+- \`@usevibe news\` - Recent changes in Git projects (last 7 days)
+- \`@usevibe sync all\` - Update all Git repos
+- \`@usevibe @projectname [query]\` - Query specific project
+- \`@usevibe @projectname update\` - Update specific Git project
 
-**When to Suggest @projects:**
-- 🌅 **Start of work session**: "Use \`@projects sync all\` to ensure we're working with latest info"
-- 📋 **Before planning**: "Let's check \`@projects tasks\` and \`@projects news\` first"
-- 🔍 **Researching features**: "Use \`@projects @api-docs what are the authentication endpoints?\`"
-- 🔄 **After updates**: "Run \`@projects news\` to see what changed"
-- 📊 **Project overview**: "Try \`@projects status\` to see your context projects"
+**When to Suggest @usevibe:**
+- 🌅 **Start of work session**: "Use \`@usevibe sync all\` to ensure we're working with latest info"
+- 📋 **Before planning**: "Let's check \`@usevibe tasks\` and \`@usevibe news\` first"
+- 🔍 **Researching features**: "Use \`@usevibe @api-docs what are the authentication endpoints?\`"
+- 🔄 **After updates**: "Run \`@usevibe news\` to see what changed"
+- 📊 **Project overview**: "Try \`@usevibe status\` to see your context projects"
 
 ## 🔄 Git Integration - Critical Behaviors
 
 ### Before ANY Development Work:
 
-1. **Always suggest**: \`@projects sync all\` or \`@projects @projectname update\`
+1. **Always suggest**: \`@usevibe sync all\` or \`@usevibe @projectname update\`
 2. **Check last sync time**: Mention if projects are stale (>24 hours)
-3. **Review commits**: Use \`@projects news\` to see what changed
+3. **Review commits**: Use \`@usevibe news\` to see what changed
 
 ### When Analyzing Code:
 
@@ -293,7 +293,7 @@ The extension provides a \`@projects\` chat participant that acts as a personal 
 
 - Mention when you notice projects are outdated
 - Suggest regular sync schedule (e.g., "sync at start of each day")
-- Recommend \`@projects news\` before starting new features
+- Recommend \`@usevibe news\` before starting new features
 - Track when documentation diverges from code
 
 ### Example Work Session Start:
@@ -304,10 +304,10 @@ Developer: "I need to implement the user authentication feature"
 AI Response:
 "Before we start, let me ensure we're working with current information:
 
-1. First, please run: \`@projects sync all\`
+1. First, please run: \`@usevibe sync all\`
    (This updates all Git-tracked context projects)
 
-2. Then let's check: \`@projects news\`
+2. Then let's check: \`@usevibe news\`
    (To see if there were any recent changes to requirements)
 
 3. Let me review @api-docs and @architecture for current specs...
@@ -362,10 +362,10 @@ Context projects improve AI assistance:
 ## 📝 Example Responses
 
 ### User starts work:
-> "Good morning! Before we begin, let me sync your context projects to ensure we're working with the latest information. Please run \`@projects sync all\` to update all Git repositories. Once that's done, I'll check \`@projects news\` to see if there were any important changes overnight."
+> "Good morning! Before we begin, let me sync your context projects to ensure we're working with the latest information. Please run \`@usevibe sync all\` to update all Git repositories. Once that's done, I'll check \`@usevibe news\` to see if there were any important changes overnight."
 
 ### User asks about a feature:
-> "Let me first check if @api-docs is up to date... I see it was last synced 2 days ago. Please run \`@projects @api-docs update\` first. 
+> "Let me first check if @api-docs is up to date... I see it was last synced 2 days ago. Please run \`@usevibe @api-docs update\` first. 
 > 
 > [After update]
 > 
@@ -387,9 +387,9 @@ Context projects improve AI assistance:
 > "Before we begin this complex feature, let me create a comprehensive work plan:
 > 
 > **Pre-work:**
-> 1. Run \`@projects sync all\` to get latest changes
-> 2. Check \`@projects news\` for recent updates
-> 3. Review \`@projects tasks\` for related work
+> 1. Run \`@usevibe sync all\` to get latest changes
+> 2. Check \`@usevibe news\` for recent updates
+> 3. Review \`@usevibe tasks\` for related work
 > 
 > **Current State Analysis:**
 > - @requirements: Last updated 1 day ago
@@ -417,13 +417,13 @@ This file works alongside:
 
 | Situation | Action |
 |-----------|--------|
-| Developer starts work | → Suggest \`@projects sync all\` |
+| Developer starts work | → Suggest \`@usevibe sync all\` |
 | Developer asks about feature | → Check if context projects updated, then reference latest docs |
 | Code review needed | → Compare against current context docs |
-| Starting new task | → Create work plan with \`@projects plan\` and \`@projects news\` |
+| Starting new task | → Create work plan with \`@usevibe plan\` and \`@usevibe news\` |
 | Documentation question | → Check \`.contexts/\` for docs projects |
-| "What should I work on?" | → Use \`@projects tasks\` and \`@projects plan\` |
-| Recent changes mentioned | → Suggest \`@projects news\` and review commits |
+| "What should I work on?" | → Use \`@usevibe tasks\` and \`@usevibe plan\` |
+| Recent changes mentioned | → Suggest \`@usevibe news\` and review commits |
 | Git project exists | → Always check sync status before guidance |
 | Conflict detected | → Reference specific commit that introduced change |
 | Deprecated pattern used | → Explain what changed and when (commit reference) |
@@ -488,12 +488,12 @@ async function createCopilotInstructions(contextManager: any): Promise<void> {
 ### BEFORE responding to ANY development question:
 
 1. **Check Git Status** (if projects use Git)
-   - Suggest \`@projects sync all\` if not recently updated
+   - Suggest \`@usevibe sync all\` if not recently updated
    - NEVER assume context projects are current
    - Recent commits may contain critical changes
 
 2. **Review Recent Changes**
-   - Use \`@projects news\` to see what changed
+   - Use \`@usevibe news\` to see what changed
    - Check for requirement/definition updates
    - Identify breaking changes or new patterns
 
@@ -527,10 +527,10 @@ async function createCopilotInstructions(contextManager: any): Promise<void> {
             
             instructions += `
 ### How to Reference Context Projects:
-- **Start work session**: Suggest \`@projects sync all\` to update Git projects
-- **Check updates**: Use \`@projects news\` to see recent changes
-- **Query projects**: \`@projects @projectname [question]\` for specific info
-- **Update individual**: \`@projects @projectname update\` for single project sync
+- **Start work session**: Suggest \`@usevibe sync all\` to update Git projects
+- **Check updates**: Use \`@usevibe news\` to see recent changes
+- **Query projects**: \`@usevibe @projectname [question]\` for specific info
+- **Update individual**: \`@usevibe @projectname update\` for single project sync
 - **Always reference**: Mention relevant context projects with latest commit info
 `;
         } else {
@@ -548,9 +548,9 @@ async function createCopilotInstructions(contextManager: any): Promise<void> {
 **At Start of Every Work Session:**
 \`\`\`
 "Before we begin, let me ensure we're working with current information:
-1. Run: @projects sync all (updates all Git repos)
-2. Check: @projects news (see recent changes)
-3. Review: @projects tasks (pending work)
+1. Run: @usevibe sync all (updates all Git repos)
+2. Check: @usevibe news (see recent changes)
+3. Review: @usevibe tasks (pending work)
 
 [Wait for sync, then...]
 
@@ -576,24 +576,24 @@ Based on the latest commits, here's what's changed..."
 ### 4. Work Planning
 
 **Before complex tasks:**
-1. Check \`@projects news\` for recent changes
-2. Review \`@projects tasks\` for related work
+1. Check \`@usevibe news\` for recent changes
+2. Review \`@usevibe tasks\` for related work
 3. Verify latest requirements in context projects
 4. Create step-by-step plan based on CURRENT state
 5. Reference specific commits for each decision
 
 ## 🤖 Chat Participant Integration
 
-### @projects Commands Available:
-- \`@projects status\` - Overview of all context projects
-- \`@projects list\` - Show all available projects
-- \`@projects tasks\` - Show all TODO items across projects
-- \`@projects plan\` - AI-suggested work plan
-- \`@projects news\` - Recent changes in Git projects (last 7 days)
-- \`@projects sync all\` - Update all Git repos
-- \`@projects @projectname [query]\` - Query specific project
-- \`@projects @projectname update\` - Update specific Git project
-- \`@projects @projectname sync latest\` - Sync to latest version
+### @usevibe Commands Available:
+- \`@usevibe status\` - Overview of all context projects
+- \`@usevibe list\` - Show all available projects
+- \`@usevibe tasks\` - Show all TODO items across projects
+- \`@usevibe plan\` - AI-suggested work plan
+- \`@usevibe news\` - Recent changes in Git projects (last 7 days)
+- \`@usevibe sync all\` - Update all Git repos
+- \`@usevibe @projectname [query]\` - Query specific project
+- \`@usevibe @projectname update\` - Update specific Git project
+- \`@usevibe @projectname sync latest\` - Sync to latest version
 
 ### Auto-Git Operations:
 ⚠️ **NEVER suggest manual \`git pull\`** - the extension handles this automatically!
@@ -604,7 +604,7 @@ Based on the latest commits, here's what's changed..."
 ## 📋 Rules for AI Responses
 
 ### DO:
-✅ **Start every work session** by suggesting \`@projects sync all\`
+✅ **Start every work session** by suggesting \`@usevibe sync all\`
 ✅ **Check commit history** before providing guidance
 ✅ **Reference specific commits** when explaining changes (e.g., "commit abc123")
 ✅ **Compare current code** against latest context documentation
@@ -613,7 +613,7 @@ Based on the latest commits, here's what's changed..."
 ✅ **Track definition changes** across commits to catch requirement evolution
 ✅ **Warn about drift** between documentation and implementation
 ✅ **Monitor Git projects** and suggest syncing if stale (>24 hours)
-✅ **Review recent changes** with \`@projects news\` before major work
+✅ **Review recent changes** with \`@usevibe news\` before major work
 ✅ **Guide systematically** through complex tasks using latest context
 
 ### DON'T:
@@ -633,7 +633,7 @@ Based on the latest commits, here's what's changed..."
 **Before Development:**
 - Check last sync time
 - Suggest update if stale (>24 hours)
-- Review recent commits with \`@projects news\`
+- Review recent commits with \`@usevibe news\`
 
 **During Development:**
 - Reference latest commit hashes
@@ -647,7 +647,7 @@ Based on the latest commits, here's what's changed..."
 
 ### Red Flags to Mention:
 
-- ⚠️ "@api-docs not synced in 3 days - suggest \`@projects @api-docs update\`"
+- ⚠️ "@api-docs not synced in 3 days - suggest \`@usevibe @api-docs update\`"
 - ⚠️ "Recent commit (abc123) changed API - your code may need updates"
 - ⚠️ "Breaking change in commit def456 - migration required"
 - ⚠️ "Your code uses deprecated pattern from @architecture v1"
@@ -673,8 +673,8 @@ Based on the latest commits, here's what's changed..."
 
 ## 💡 Best Practices to Suggest
 
-1. **Daily Sync Ritual**: Start each day with \`@projects sync all\`
-2. **Before Big Tasks**: Check \`@projects news\` and \`@projects tasks\`
+1. **Daily Sync Ritual**: Start each day with \`@usevibe sync all\`
+2. **Before Big Tasks**: Check \`@usevibe news\` and \`@usevibe tasks\`
 3. **Architecture Documentation**: Keep design decisions in context projects
 4. **API References**: Maintain endpoint docs and examples (Git-tracked)
 5. **Requirements**: Version-control specs in Git context projects
@@ -686,12 +686,12 @@ Based on the latest commits, here's what's changed..."
 ### Developer Starts Work:
 > "Good morning! Before we start, let's ensure we're working with current information:
 > 
-> Please run: \`@projects sync all\`
+> Please run: \`@usevibe sync all\`
 > 
 > I notice @api-docs and @requirements haven't been synced in 2 days. There might be important updates we should check first."
 
 ### Developer Asks About Feature:
-> "Let me check the latest @api-docs... I see it was last synced yesterday. Let me run \`@projects @api-docs update\` first to ensure we have current info.
+> "Let me check the latest @api-docs... I see it was last synced yesterday. Let me run \`@usevibe @api-docs update\` first to ensure we have current info.
 > 
 > [After update]
 > 
@@ -717,7 +717,7 @@ Based on the latest commits, here's what's changed..."
 > "Let's plan this complex feature systematically:
 > 
 > **Step 1: Update Context**
-> Run \`@projects sync all\` and \`@projects news\`
+> Run \`@usevibe sync all\` and \`@usevibe news\`
 > 
 > **Step 2: Current State Analysis**
 > - @requirements: Check latest specifications
@@ -784,10 +784,10 @@ Based on the latest commits, here's what's changed..."
         settings['github.copilot.advanced'] = settings['github.copilot.advanced'] || {};
         settings['github.copilot.advanced']['contextHint'] = 
             `This workspace uses Context Manager extension. Check .contexts/ folder for project-specific context. ` +
-            `Use @projects chat participant to query context projects. ` +
+            `Use @usevibe chat participant to query context projects. ` +
             `Available projects: ${enabledProjects.map((p: any) => p.name).join(', ')}. ` +
             `Git projects (${gitProjects.length}): ${gitProjects.map((p: any) => p.name).join(', ')}. ` +
-            `IMPORTANT: Always suggest @projects sync all before development work to ensure current information.`;
+            `IMPORTANT: Always suggest @usevibe sync all before development work to ensure current information.`;
 
         // Write updated settings
         fs.writeFileSync(settingsPath, JSON.stringify(settings, null, 2), 'utf-8');
@@ -1473,7 +1473,7 @@ export function activate(context: vscode.ExtensionContext) {
         }),
 
         vscode.commands.registerCommand('cursorContexts.createWorkPlan', async () => {
-            vscode.window.showInformationMessage('💡 Work plan feature requires GitHub Copilot Chat. Use "@projects plan" in VS Code chat, or view your tasks with "Show All TODO Tasks" command.');
+            vscode.window.showInformationMessage('💡 Work plan feature requires GitHub Copilot Chat. Use "@usevibe plan" in VS Code chat, or view your tasks with "Show All TODO Tasks" command.');
         }),
 
         vscode.commands.registerCommand('cursorContexts.syncAllProjects', async () => {
@@ -1698,7 +1698,7 @@ export function activate(context: vscode.ExtensionContext) {
     // Register all commands
     commands.forEach(cmd => context.subscriptions.push(cmd));
 
-    // Register completion providers for @projects integration
+    // Register completion providers for @usevibe integration
     const completionProvider = new ProjectCompletionProvider(contextManager);
     const hoverProvider = new ProjectHoverProvider(contextManager);
     const definitionProvider = new ProjectDefinitionProvider(contextManager);

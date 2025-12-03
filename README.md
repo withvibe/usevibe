@@ -37,7 +37,7 @@ useVibe creates organized **context projects** that:
 - ✅ Feed relevant context to your AI assistants automatically
 - ✅ Sync with external repositories (docs, SDKs, examples)
 - ✅ Track changes and keep documentation up-to-date
-- ✅ Work seamlessly with **GitHub Copilot Chat** via `@projects` participant
+- ✅ Work seamlessly with **GitHub Copilot Chat** via `@usevibe` participant
 
 ---
 
@@ -55,14 +55,14 @@ Create dedicated knowledge spaces for different aspects of your project:
 ### 🤖 **AI Assistant Integration**
 
 #### GitHub Copilot Chat Participant
-Use the `@projects` chat participant in VS Code:
+Use the `@usevibe` chat participant in VS Code:
 ```
-@projects status              # Overview of all projects
-@projects tasks               # Show all TODO items
-@projects plan                # Get AI work plan for today
-@projects news                # Recent changes across projects
-@projects sync all            # Update all Git repos
-@projects @api-docs [query]   # Query specific project
+@usevibe status              # Overview of all projects
+@usevibe tasks               # Show all TODO items
+@usevibe plan                # Get AI work plan for today
+@usevibe news                # Recent changes across projects
+@usevibe sync all            # Update all Git repos
+@usevibe @api-docs [query]   # Query specific project
 ```
 
 #### Command Palette (Cursor & VS Code)
@@ -158,7 +158,7 @@ https://github.com/typescript-cheatsheets/react
 
 #### In VS Code with GitHub Copilot:
 ```
-@projects @api-docs how do I authenticate users?
+@usevibe @api-docs how do I authenticate users?
 ```
 
 #### In Cursor or via Command Palette:
@@ -221,12 +221,12 @@ Configure useVibe in your VS Code settings:
 
 | Command | Description |
 |---------|-------------|
-| `@projects status` | Show comprehensive project status |
-| `@projects tasks` | Display all TODO items |
-| `@projects plan` | Get AI-suggested work plan |
-| `@projects news` | Show recent changes |
-| `@projects sync all` | Update all repos with summaries |
-| `@projects @name [query]` | Query specific project |
+| `@usevibe status` | Show comprehensive project status |
+| `@usevibe tasks` | Display all TODO items |
+| `@usevibe plan` | Get AI-suggested work plan |
+| `@usevibe news` | Show recent changes |
+| `@usevibe sync all` | Update all repos with summaries |
+| `@usevibe @name [query]` | Query specific project |
 
 ---
 
@@ -248,10 +248,10 @@ When Copilot suggests code, it references your architecture docs for consistent 
 
 Clone official documentation:
 ```
-@projects clone https://github.com/openai/openai-python
+@usevibe clone https://github.com/openai/openai-python
 ```
 
-Now ask: `@projects @openai-python how do I stream responses?`
+Now ask: `@usevibe @openai-python how do I stream responses?`
 
 ### 3. **Onboarding New Team Members**
 

@@ -99,7 +99,7 @@ export class ProjectsChatParticipant {
             }
             
             if (!projectMatch) {
-                stream.markdown('Please specify a project name. Usage: `@projects @myproject what is new?` or `@projects myproject what is new?`');
+                stream.markdown('Please specify a project name. Usage: `@usevibe @myproject what is new?` or `@usevibe myproject what is new?`');
                 await this.showProjectSuggestions(stream);
                 return;
             }
@@ -132,7 +132,7 @@ export class ProjectsChatParticipant {
                 stream.markdown(`❌ Project "${projectName}" not found or not enabled.\n\n`);
                 if (availableProjects) {
                     stream.markdown(`**Available projects:** ${availableProjects}\n\n`);
-                    stream.markdown(`💡 Try: \`@projects list\` to see all projects`);
+                    stream.markdown(`💡 Try: \`@usevibe list\` to see all projects`);
                 } else {
                     stream.markdown(`No enabled projects found. Create some projects first using the Contexts view.`);
                 }
@@ -343,10 +343,10 @@ Please provide a helpful and detailed response about this project based on the c
             stream.markdown(`• \`@${project.name}\`${description}\n`);
         });
 
-        stream.markdown('\n💡 **Usage:** `@projects @<project-name> <your question>` or `@projects <project-name> <your question>`\n');
+        stream.markdown('\n💡 **Usage:** `@usevibe @<project-name> <your question>` or `@usevibe <project-name> <your question>`\n');
         stream.markdown('**Examples:**\n');
-        stream.markdown('- `@projects @myapi what are the main endpoints?`\n');
-        stream.markdown('- `@projects myapi what changed recently?`');
+        stream.markdown('- `@usevibe @myapi what are the main endpoints?`\n');
+        stream.markdown('- `@usevibe myapi what changed recently?`');
     }
 
     private async showProjectSuggestions(stream: vscode.ChatResponseStream): Promise<void> {
@@ -360,11 +360,11 @@ Please provide a helpful and detailed response about this project based on the c
 
         stream.markdown('📂 **Available projects:**\n\n');
         enabledProjects.slice(0, 5).forEach(project => {
-            stream.markdown(`• \`@projects @${project.name}\` - ${project.description || 'No description'}\n`);
+            stream.markdown(`• \`@usevibe @${project.name}\` - ${project.description || 'No description'}\n`);
         });
 
         if (enabledProjects.length > 5) {
-            stream.markdown(`\n... and ${enabledProjects.length - 5} more. Type \`@projects list\` to see all.`);
+            stream.markdown(`\n... and ${enabledProjects.length - 5} more. Type \`@usevibe list\` to see all.`);
         }
     }
 
@@ -377,7 +377,7 @@ Please provide a helpful and detailed response about this project based on the c
         
         const followups: vscode.ChatFollowup[] = [
             {
-                prompt: '@projects list',
+                prompt: '@usevibe list',
                 label: '📋 List all projects'
             }
         ];
@@ -385,7 +385,7 @@ Please provide a helpful and detailed response about this project based on the c
         // Add quick access to projects with @ syntax for better autocomplete
         projects.slice(0, 5).forEach(project => {
             followups.push({
-                prompt: `@projects @${project.name} `,
+                prompt: `@usevibe @${project.name} `,
                 label: `🔍 @${project.name} - ${project.description || 'Ask about this project'}`
             });
         });
@@ -397,15 +397,15 @@ Please provide a helpful and detailed response about this project based on the c
             
             followups.push(
                 {
-                    prompt: `@projects @${sampleProject.name} what's new?`,
+                    prompt: `@usevibe @${sampleProject.name} what's new?`,
                     label: '💡 What\'s new in project?'
                 },
                 {
-                    prompt: `@projects @${sampleProject.name} what files changed recently?`,
+                    prompt: `@usevibe @${sampleProject.name} what files changed recently?`,
                     label: '📁 What files changed?'
                 },
                 {
-                    prompt: `@projects @${sampleProject.name} explain the architecture`,
+                    prompt: `@usevibe @${sampleProject.name} explain the architecture`,
                     label: '🏗️ Explain architecture'
                 }
             );
@@ -415,11 +415,11 @@ Please provide a helpful and detailed response about this project based on the c
                 const gitProject = gitProjects[0];
                 followups.push(
                     {
-                        prompt: `@projects @${gitProject.name} update`,
+                        prompt: `@usevibe @${gitProject.name} update`,
                         label: '🔄 Update project (Git pull)'
                     },
                     {
-                        prompt: `@projects @${gitProject.name} sync latest`,
+                        prompt: `@usevibe @${gitProject.name} sync latest`,
                         label: '📥 Sync to latest version'
                     }
                 );
@@ -443,7 +443,7 @@ Please provide a helpful and detailed response about this project based on the c
         }
         
         if (!projectMatch) {
-            stream.markdown('Please specify a project name. Usage: `@projects @myproject what changed?` or `@projects myproject what changed?`');
+            stream.markdown('Please specify a project name. Usage: `@usevibe @myproject what changed?` or `@usevibe myproject what changed?`');
             await this.showProjectSuggestions(stream);
             return;
         }
@@ -643,7 +643,7 @@ Please provide a helpful analysis of the Git repository and recent changes, focu
         }
         
         if (!projectMatch) {
-            stream.markdown('Please specify a project name. Usage: `@projects @myproject update` or `@projects myproject get latest`');
+            stream.markdown('Please specify a project name. Usage: `@usevibe @myproject update` or `@usevibe myproject get latest`');
             await this.showProjectSuggestions(stream);
             return;
         }
@@ -1461,7 +1461,7 @@ Be warm, professional, and encouraging. Start with something like "Here's what I
                 stream.markdown(fragment);
             }
 
-            stream.markdown('\n\n---\n\n💡 *Use `@projects tasks` to see all TODO items, or `@projects news` to check for updates.*\n');
+            stream.markdown('\n\n---\n\n💡 *Use `@usevibe tasks` to see all TODO items, or `@usevibe news` to check for updates.*\n');
         } catch (error) {
             stream.markdown('Unable to generate work plan at this time.\n');
         }

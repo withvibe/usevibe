@@ -29,13 +29,13 @@ The first public release of useVibe (formerly cursor-contexts)!
 - **Update Notifications**: Get notified when Git projects have new changes
 
 #### AI Assistant Integration
-- **@projects Chat Participant**: GitHub Copilot chat integration (VS Code)
-  - `@projects status` - Project overview
-  - `@projects tasks` - TODO scanning
-  - `@projects plan` - AI work planning
-  - `@projects news` - Recent changes
-  - `@projects sync all` - Update all repos
-  - `@projects @name [query]` - Query specific project
+- **@usevibe Chat Participant**: GitHub Copilot chat integration (VS Code)
+  - `@usevibe status` - Project overview
+  - `@usevibe tasks` - TODO scanning
+  - `@usevibe plan` - AI work planning
+  - `@usevibe news` - Recent changes
+  - `@usevibe sync all` - Update all repos
+  - `@usevibe @name [query]` - Query specific project
 - **Command Palette Commands**: Works in both Cursor and VS Code
   - Show Project Status
   - Show All TODO Tasks
@@ -102,7 +102,7 @@ This initial release establishes useVibe as a powerful tool for organizing proje
 **What's Working Great:**
 - ✅ Context project creation and management
 - ✅ Git repository cloning and syncing
-- ✅ GitHub Copilot chat participant (@projects)
+- ✅ GitHub Copilot chat participant (@usevibe)
 - ✅ Command Palette commands for Cursor compatibility
 - ✅ Auto-sync with configurable intervals
 - ✅ Rich file format support

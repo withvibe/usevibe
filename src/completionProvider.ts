@@ -4,7 +4,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 
 /**
- * Completion provider for @projects in editor and chat
+ * Completion provider for @usevibe in editor and chat
  */
 export class ProjectCompletionProvider implements vscode.CompletionItemProvider {
     private contextManager: ContextManager;
@@ -22,16 +22,16 @@ export class ProjectCompletionProvider implements vscode.CompletionItemProvider 
         
         const linePrefix = document.lineAt(position).text.substring(0, position.character);
         
-        // Check if user typed @ or @pro or @projects
+        // Check if user typed @ or @use or @usevibe
         if (!linePrefix.match(/@\w*$/)) {
             return undefined;
         }
 
         const completions: vscode.CompletionItem[] = [];
 
-        // Add @projects trigger
-        if (linePrefix.endsWith('@') || linePrefix.match(/@p\w*$/)) {
-            const projectsItem = new vscode.CompletionItem('@projects', vscode.CompletionItemKind.Folder);
+        // Add @usevibe trigger
+        if (linePrefix.endsWith('@') || linePrefix.match(/@u\w*$/)) {
+            const projectsItem = new vscode.CompletionItem('@usevibe', vscode.CompletionItemKind.Folder);
             projectsItem.detail = 'Show all context projects';
             projectsItem.documentation = 'List and select from available context projects';
             projectsItem.command = {
@@ -66,7 +66,7 @@ export class ProjectCompletionProvider implements vscode.CompletionItemProvider 
             
             item.documentation = new vscode.MarkdownString(docs);
             item.insertText = `@${project.name}`;
-            item.filterText = `@${project.name} @projects`;
+            item.filterText = `@${project.name} @usevibe`;
             item.sortText = `0_${project.name}`;
             
             completions.push(item);

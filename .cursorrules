@@ -41,17 +41,17 @@ The Cursor Contexts extension is active in this workspace. It helps organize pro
 
 ## Extension Features Available
 
-### Chat Integration (@projects)
-- Users can interact with context projects via `@projects` chat participant
-- Support both `@projects projectname` and `@projects @projectname` syntax
+### Chat Integration (@usevibe)
+- Users can interact with context projects via `@usevibe` chat participant
+- Support both `@usevibe projectname` and `@usevibe @projectname` syntax
 - Automatically handles Git operations (pull, update, sync) when requested
 - Provides project-specific analysis and change tracking
 
 ### Available Commands
-- **Clone from GitHub**: `@projects clone [github-url]` - Clone repositories as context projects
-- **Update Project**: `@projects @projectname update` - Automatically pull latest changes
-- **List Projects**: `@projects list` - Show all available context projects
-- **Query Project**: `@projects @projectname [question]` - Ask specific questions about a project
+- **Clone from GitHub**: `@usevibe clone [github-url]` - Clone repositories as context projects
+- **Update Project**: `@usevibe @projectname update` - Automatically pull latest changes
+- **List Projects**: `@usevibe list` - Show all available context projects
+- **Query Project**: `@usevibe @projectname [question]` - Ask specific questions about a project
 
 ### Git Integration
 - Context projects can be Git repositories with automatic change tracking
@@ -87,9 +87,9 @@ The Cursor Contexts extension is active in this workspace. It helps organize pro
 3. Reference authentication and authorization patterns
 
 ### When User Asks About Recent Changes:
-1. Use `@projects @projectname what changed recently?` syntax
+1. Use `@usevibe @projectname what changed recently?` syntax
 2. Leverage Git integration for change analysis
-3. Help user update projects with `@projects @projectname update`
+3. Help user update projects with `@usevibe @projectname update`
 
 ### When User Asks About Examples:
 1. Search context projects for relevant examples
@@ -147,7 +147,7 @@ The Cursor Contexts extension is active in this workspace. It helps organize pro
 ## Troubleshooting Common Issues
 
 ### Context Project Not Found
-- Use `@projects list` to see available projects
+- Use `@usevibe list` to see available projects
 - Check project naming and ensure it's enabled
 - Verify `.contexts` folder structure
 
